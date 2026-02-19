@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Покупка кофе - Кофейная обжарка</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="nav">
+            <a href="" class="logo">Кофейная обжарка</a>
+            <ul class="nav-list">
+                <li><a aria-current="page" href="index.htm">Кофе</a></li>
+                <li><a href="reports.htm">Отчётность</a></li>
+                <li><a href="admin.htm">Админ</a></li>
+                <li><a href="login.htm">Вход</a></li>
+                <li><a href="register.htm">Регистрация</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container" role="main">
+        <h1>Формирование заказа и поставки </h1>
+        <p class="muted">создание заказов на готовую продукцию</p>
+
+
+        <section class="card">
+            <h2>Оформление поставки</h2>
+            <form method="get" action="/performances">
+                <div class="form-row">
+                    <label for="packaging">Фасовка</label>
+                    <select id="packaging" name="packaging_id" required>
+                        <option value="">Выберите тип фасовки</option>
+                        <option value="1">Вакуумная упаковка</option>
+                        <option value="2">Картонный тубус</option>
+                    </select>
+                    <label for="min_length">Количество</label>
+                    <input id="min_length" name="min_length" type="number" min="1" max="999" value="1" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="date">Дата отгрузки</label>
+                    <select id="date" name="date" required>
+                        <option value="">Выберать дату</option>
+                        <option value="2026-02-28">28 февраля 2026 — 12:00</option>
+                        <option value="2026-03-02">2 марта 2026 — 10:00</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="payment">Способ доставки</label>
+                    <select id="payment" name="payment_method" required>
+                        <option value="">Выберите способ доставки</option>
+                        <option value="courier">Курьером</option>
+                        <option value="point">В пункт выдачи</option>
+                    </select>
+                </div>
+                 <div class="form-row">
+                    <label for="recipient">Получатель</label>
+                    <input id="recipient" name="recipient" type="text" placeholder="Имя и фамилия" autocomplete="off" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn primary">Оформить заказ</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>© Кофейная обжарка - 1999</small>
+    </footer>
+</body>
+
+</html>

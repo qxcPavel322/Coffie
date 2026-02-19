@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Вход — Кофейная обжарка</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="nav">
+            <a href="" class="logo">Кофейная обжарка</a>
+            <ul class="nav-list">
+                <li><a href="index.htm">Кофе</a></li>
+                <li><a href="reports.htm">Отчётность</a></li>
+                <li><a href="admin.htm">Админ</a></li>
+                <li><a aria-current="page" href="login.htm">Вход</a></li>
+                <li><a href="register.htm">Регистрация</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container" role="main">
+        <h1>Вход</h1>
+        <p class="muted">Введите логин и пароль.</p>
+
+
+        <div class="flash error" role="alert" aria-live="polite" id="flash">
+            Неверный логин или пароль. Попробуйте ещё раз.
+        </div>
+
+        <form class="card form" method="post" action="/login" novalidate>
+
+            <div class="form-row">
+                <label for="login">Логин</label>
+                <input id="login" name="login" type="text" autocomplete="username" required minlength="6" maxlength="64"
+                    pattern="^[A-Za-z0-9]{6,}$" title="Только латиница и цифры, не меньше 6 символов." />
+            </div>
+
+
+            <div class="form-row">
+                <label for="password">Пароль</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required
+                    minlength="8" maxlength="128" title="Пароль не меньше 8 символов." />
+            </div>
+
+
+            <div class="form-row">
+                <label class="checkbox">
+                    <input type="checkbox" name="remember" value="1">
+                    <span>Запомнить меня</span>
+                </label>
+                
+            </div>
+
+
+            <div class="form-actions">
+                <button type="submit" class="btn primary">Войти</button>
+                <a class="btn link" href="register.htm">Создать аккаунт</a>
+            </div>
+
+
+            <input type="hidden" name="csrf_token" value="[[to-be-filled-by-server]]" />
+        </form>
+    </main>
+
+    <footer class="site-footer">
+        <small>© Кофейная обжарка - 1999</small>
+    </footer>
+</body>
+
+</html>

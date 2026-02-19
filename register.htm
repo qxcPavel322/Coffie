@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Регистрация — Кофейная обжарка</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="nav">
+            <a href="" class="logo">Кофейная обжарка</a>
+            <ul class="nav-list">
+                <li><a href="index.htm">Кофе</a></li>
+                <li><a href="reports.htm">Отчётность</a></li>
+                <li><a href="admin.htm">Админ</a></li>
+                <li><a href="login.htm">Вход</a></li>
+                <li><a aria-current="page" href="register.htm">Регистрация</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container" role="main">
+        <h1>Регистрация</h1>
+        <p class="muted">Все поля должны быть заполнены.</p>
+
+
+        <div class="flash" role="alert" aria-live="polite" id="flash-area" hidden></div>
+
+        <form class="card form" method="post" action="/register" novalidate>
+
+            <div class="form-row">
+                <label for="login">Логин</label>
+                <input id="login" name="login" type="text" inputmode="latin" autocomplete="username" required
+                    pattern="^[A-Za-z0-9]{6,}$" minlength="6" maxlength="64"
+                    title=" латиница и цифры, не меньше 6 символов." aria-describedby="login-help" />
+                <small id="login-help" class="help">
+                    Пример: <code>user12345</code>. не менее 6 символов.
+                </small>
+            </div>
+
+
+            <div class="form-row">
+                <label for="password">Пароль</label>
+                <input id="password" name="password" type="password" autocomplete="new-password" required minlength="8"
+                    maxlength="128" title="Пароль не менее 8 символов." aria-describedby="password-help" />
+                <small id="password-help" class="help">
+                    Минимум 8 символов.
+                </small>
+            </div>
+
+
+            <div class="form-row">
+                <label for="full_name">ФИО</label>
+                <input id="full_name" name="full_name" type="text" required maxlength="200"
+                    pattern="^[A-Za-zА-Яа-яЁё\- ]{5,}$" title="Только буквы, пробел и дефис. Не короче 5 символов."
+                    aria-describedby="fio-help" />
+                <small id="fio-help" class="help">
+                    Только буквы рус/лат, пробел, не менее 5 символов.
+                </small>
+            </div>
+
+
+            <div class="form-row">
+                <label for="phone">Телефон</label>
+                <input id="phone" name="phone" type="tel" inputmode="numeric" required placeholder="8(999)111-22-33"
+                    pattern="^8\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}$" title="Формат: 8(XXX)XXX-XX-XX"
+                    aria-describedby="phone-help" />
+                <small id="phone-help" class="help">
+                    Формат: <code>8(XXX)XXX-XX-XX</code>
+                </small>
+            </div>
+
+
+            <div class="form-row">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" required maxlength="255"
+                    title="Укажите адрес электронной почты." />
+            </div>
+
+
+            <div class="form-row">
+                <label class="checkbox">
+                    <input type="checkbox" name="terms"  />
+                    <span>Я принимаю условия обработки персональных данных</span>
+                </label>
+            </div>
+
+
+            <div class="form-actions">
+                <button type="submit" class="btn primary">Создать аккаунт</button>
+                <a class="btn link" href="login.htm">У меня уже есть аккаунт</a>
+            </div>
+
+        </form>
+
+        <noscript>
+            <p class="muted">JavaScript не обязателен для регистрации. Валидация выполняется на сервере.</p>
+        </noscript>
+    </main>
+
+    <footer class="site-footer">
+        <small>© Кофейная обжарка - 1999</small>
+    </footer>
+</body>
+
+</html>
